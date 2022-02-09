@@ -8,14 +8,13 @@ export class Pedido extends Base {
     this._quantidade = quantidade
     this._pessoa = pessoa
 
-    this.erros = []
+    this._pessoa.EhValido()
   }
 
   private _descricao: string
   private _preco: number
   private _quantidade: number
   private _pessoa: Pessoa
-  erros: string[];
 
   public get Descricao() {
     return this._descricao
@@ -44,10 +43,6 @@ export class Pedido extends Base {
   private AplicarDescontoVoucher (valorTotal: number, porcentagemVoucher: number): number {
     if (porcentagemVoucher > 100 || porcentagemVoucher === 0) return valorTotal
     const valorTotalPedidoComDesconto = (valorTotal * porcentagemVoucher) / 100
-    return valorTotalPedidoComDesconto
-  }
-
-  public adicionarErro(erro: string) {
-    this.erros.push(erro)
+    return valorTotal - valorTotalPedidoComDesconto
   }
 }

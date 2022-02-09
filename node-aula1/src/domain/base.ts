@@ -1,3 +1,11 @@
 export abstract class Base {
-  abstract erros: string[]
+  constructor () {
+    this.erros = []
+  }
+
+  erros: string[]
+
+  public AdicionarErro(erro: string) {
+    this.erros.push(erro)
+  }
 }
