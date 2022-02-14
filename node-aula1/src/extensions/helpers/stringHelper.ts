@@ -1,9 +1,5 @@
 function somenteNumeros(texto: string): string {
-  return texto
-          .replace('.','')
-          .replace('.','')
-          .replace('-','')
-          .replace(" ","")
+  return texto.replace(/[\.\-]/g,'')
 }
 
 export {
