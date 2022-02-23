@@ -1,4 +1,4 @@
-import { somenteNumeros } from "../extensions/helpers/stringHelper"
+import { somenteNumeros } from "../../extensions/helpers/stringHelper"
 export default class Cpf {
   private _cpf: string
   

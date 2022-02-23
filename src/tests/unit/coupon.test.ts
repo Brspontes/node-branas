@@ -1,4 +1,4 @@
-import Coupon from "../domain/coupon"
+import Coupon from "../../domain/entities/coupon"
 
 describe('Testes de cupom de desconto', () => {
   test('Deve criar um cupom de desconto', function() {

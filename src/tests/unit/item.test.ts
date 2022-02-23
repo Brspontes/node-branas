@@ -1,5 +1,5 @@
-import Dimension from "../domain/dimension"
-import Item from "../domain/item"
+import Dimension from "../../domain/entities/dimension"
+import Item from "../../domain/entities/item"
 
 describe('Testes de Item', () => {
   test('Deve criar um item com dimensões - volume', function() {

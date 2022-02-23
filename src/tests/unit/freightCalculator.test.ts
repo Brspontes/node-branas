@@ -1,6 +1,6 @@
-import Dimension from "../domain/dimension";
-import FreightCalculator from "../domain/freightCalculator";
-import Item from "../domain/item";
+import Dimension from "../../domain/entities/dimension";
+import FreightCalculator from "../../domain/entities/freightCalculator";
+import Item from "../../domain/entities/item";
 
 
 test("Deve calcular o frete de um item", function () {

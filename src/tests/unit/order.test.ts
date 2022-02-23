@@ -1,7 +1,7 @@
-import Coupon from "../domain/coupon";
-import Dimension from "../domain/dimension";
-import Item from "../domain/item";
-import Order from "../domain/order";
+import Coupon from "../../domain/entities/coupon";
+import Dimension from "../../domain/entities/dimension";
+import Item from "../../domain/entities/item";
+import Order from "../../domain/entities/order";
 
 describe('Testes de realização de pedido', () => {
   test("Não deve criar um pedido com CPF inválido", function () {

@@ -1,4 +1,4 @@
-import Dimension from "../domain/dimension"
+import Dimension from "../../domain/entities/dimension"
 
 describe('Testes de dimensão', () => {
   test('Deve criar as dimensões do item', function() {

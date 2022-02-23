@@ -1,4 +1,4 @@
-import Cpf from "../domain/Cpf"
+import Cpf from "../../domain/entities/cpf"
 
 describe('Testes de validações de CPF', () => {
   test('Deve retornar CPF válido', () => {
