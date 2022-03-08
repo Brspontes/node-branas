@@ -47,4 +47,13 @@ describe('Testes de realização de pedido', () => {
     const total = order.getTotal();
     expect(total).toBe(6350);
   });
+
+  test("Deve criar um pedido e calcular o código", function () {
+    const order = new Order("935.411.347-80", new Date('2021-03-01T10:00:00'));
+    order.addItem(new Item(1, "Instrumentos Musicais", "Guitarra", 1000, new Dimension(100, 30, 10), 3), 1);
+    order.addItem(new Item(2, "Instrumentos Musicais", "Amplificador", 5000, new Dimension(100, 50, 50), 20), 1);
+    order.addItem(new Item(3, "Instrumentos Musicais", "Cabo", 30, new Dimension(10, 10, 10), 1), 3);
+    
+    expect(order.code.value).toBe('202100000001')
+  });
 })

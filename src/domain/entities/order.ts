@@ -3,6 +3,7 @@ import Cpf from "./cpf";
 import Freight from "./Freight";
 import FreightCalculator from "./freightCalculator";
 import Item from "./item";
+import OrderCode from "./orderCode";
 import OrderItem from "./orderItem";
 
 export default class Order {
@@ -10,12 +11,15 @@ export default class Order {
 	orderItems: OrderItem[];
 	coupon: Coupon | undefined;
   private freight: Freight
+  code: OrderCode
 
 	constructor (cpf: string,
-    readonly issueDate: Date = new Date()) {
+    readonly issueDate: Date = new Date(),
+    readonly sequence: number = 1) {
 		this.cpf = new Cpf(cpf);
 		this.orderItems = [];
     this.freight = new Freight()
+    this.code = new OrderCode(issueDate, sequence)
 	}
 
 	public addItem (item: Item, quantity: number) {
