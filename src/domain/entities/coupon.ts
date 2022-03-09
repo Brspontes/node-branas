@@ -4,7 +4,7 @@ export default class Coupon {
     readonly percentage: number,
     readonly expiredDate?: Date) { }
 
-  public isExpired (today: Date = new Date()): boolean {
+  public  isExpired (today: Date = new Date()): boolean {
     if (!this.expiredDate) return false;
     return this.expiredDate.getTime() < today.getTime()
   }

@@ -6,11 +6,11 @@ import SimulateFreightOutput from "./simulateFreightOutput";
 export default class SimulateFreight {
   constructor (readonly itemRepositoryMemory: ItemRepository) {}
 
-  execute (input: SimulateFreightInput): SimulateFreightOutput {
+  async execute (input: SimulateFreightInput): Promise<SimulateFreightOutput> {
     const freight = new Freight()
 
     for (const oderItem of input.orderItems) {
-      const item = this.itemRepositoryMemory.getById(oderItem.idItem)
+      const item = await this.itemRepositoryMemory.getById(oderItem.idItem)
       if (!item) throw new Error('Item notfound')
       freight.addItem(item, oderItem.quantity)
     }

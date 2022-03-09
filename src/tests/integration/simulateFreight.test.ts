@@ -2,7 +2,7 @@ import SimulateFreight from "../../application/usecase/simulate-freight/simulate
 import SimulateFreightInput from "../../application/usecase/simulate-freight/simulateFreightInput"
 import ItemRepositoryMemory from "../../infra/repository/memory/itemRepositoryMemory"
 
-test.only('Deve simular frete de um pedido', () => {
+test('Deve simular frete de um pedido', async () => {
   const itemRepository = new ItemRepositoryMemory()
   const simulateFreight = new SimulateFreight(itemRepository)
   
@@ -12,6 +12,6 @@ test.only('Deve simular frete de um pedido', () => {
     { idItem: 3, quantity: 3 }
   ])
 
-  const output = simulateFreight.execute(input)
+  const output = await simulateFreight.execute(input)
   expect(output.total).toBe(260)
 })
